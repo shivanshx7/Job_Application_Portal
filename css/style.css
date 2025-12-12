@@ -653,3 +653,46 @@ main {
         grid-template-columns: 1fr;
     }
 }
+/* Debug/Error Styling */
+.debug-info {
+    background: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+    border-left: 4px solid #2563eb;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+/* Ensure jobs grid is visible */
+.jobs-grid:empty::after {
+    content: "Loading jobs...";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Make sure job cards are visible */
+.job-card {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Manual load button */
+.manual-load {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.manual-load:hover {
+    background: #1d4ed8;
+}
