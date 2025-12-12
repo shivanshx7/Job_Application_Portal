@@ -1,4 +1,22 @@
 // Sample job data
+// Force load jobs on any page with jobs-grid
+window.onload = function() {
+    console.log("Page loaded:", window.location.href);
+    
+    // Check for jobs grid and load if empty
+    setTimeout(() => {
+        const jobsGrid = document.querySelector('.jobs-grid');
+        if (jobsGrid && jobsGrid.children.length === 0) {
+            console.log("Jobs grid is empty, loading jobs...");
+            
+            if (document.querySelector('.featured-jobs')) {
+                loadFeaturedJobs();
+            } else if (document.querySelector('.job-listings')) {
+                loadAllJobs();
+            }
+        }
+    }, 500);
+};
 const jobsData = [
     {
         id: 1,
